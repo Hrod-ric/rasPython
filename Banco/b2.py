@@ -18,7 +18,7 @@ cur.execute("""
 CREATE TABLE IF NOT EXISTS "disciplinas" (
 	"codigo"	text NOT NULL UNIQUE,
 	"nome"	text NOT NULL,
-	PRIMARY KEY("codigo"),
+	PRIMARY KEY("codigo")
 )""")
 
 cur.execute("""

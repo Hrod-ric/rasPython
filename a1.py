@@ -126,7 +126,7 @@ def imprimirBoletim():
     print('\n***Boletim***')
     res = cur.execute('select matricula, nome from alunos')
     alunos = res.fetchall()
-    #print(alunos)
+    print(alunos)
 
     res = cur.execute('select disc_id, aluno_id, nota from notas ORDER BY disc_id')
     notas = res.fetchall()
