@@ -1,0 +1,63 @@
+from cProfile import label
+from calendar import c
+import this
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+import random
+
+#import mysql.connector
+#mydb = mysql.connector.connect(
+#  host="localhost",
+#  user="root",
+#  password="",
+#  database="SAEP"
+#)
+#cur = mydb.cursor()
+
+win_principal = Tk()
+win_principal.geometry("450x260")
+win_principal.title("SAEP")
+win_principal.configure(background="#CCFF66")
+
+def voltar():
+    for i in win_principal.winfo_children():
+        i.destroy()
+
+    Button(win_principal, text=f"Area 1", command=lambda:[area(1)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 2", command=lambda:[area(2)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 3", command=lambda:[area(3)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 4", command=lambda:[area(4)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 5", command=lambda:[area(5)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 6", command=lambda:[area(6)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 7", command=lambda:[area(7)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 8", command=lambda:[area(8)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 9", command=lambda:[area(9)], width=9, height=1).pack(anchor=W)
+    Button(win_principal, text=f"Area 10", command=lambda:[area(10)], width=9, height=1).pack(anchor=W)
+voltar()
+def area(local):
+    for i in win_principal.winfo_children():
+        i.destroy()
+    barra = Menu(win_principal)
+    win_principal.config(menu=barra)
+    barra.add_cascade(label='Voltar',command=voltar)
+
+    frm_Titulo = Frame(win_principal, bg='#3EB21E')
+    frm_Titulo.place(relx=0, rely=0, relwidth=1, relheight=0.25)
+
+    frm_Celulares = Frame(win_principal, bg='#6cf5e7')
+    frm_Celulares.place(relx=0, rely=0.25, relwidth=1, relheight=0.75)
+
+    Label(frm_Titulo, bg='#3EB21E', text=f"Area {local}", font=('Helvetica 30 bold')).pack(anchor=W)
+
+    Label(frm_Celulares, bg='#6cf5e7', text="modelo .. | preço R$..", font=('Helvetica 10 bold')).grid(row=0,column=0)
+    Button(frm_Celulares, text="Vender", command='', width=9, height=1).grid(row=0, column=1)
+
+    Label(frm_Celulares, bg='#6cf5e7', text="modelo .. | preço R$..", font=('Helvetica 10 bold')).grid(row=1,column=0)
+    Button(frm_Celulares, text="Vender", command='', width=9, height=1).grid(row=1, column=1)
+
+    Label(frm_Celulares, bg='#6cf5e7', text="modelo .. | preço R$..", font=('Helvetica 10 bold')).grid(row=2,column=0)
+    Button(frm_Celulares, text="Vender", command='', width=9, height=1).grid(row=2, column=1)
+
+mainloop()
